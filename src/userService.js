@@ -1,4 +1,4 @@
-const BASEURL = "https://api.github.com/users/";
+const BASEURL = "https://my-json-server.typicode.com/guilhermeabel99/demo/users";
 
 export const fetchGithubUser = (username) => {
   return fetch(`${BASEURL}${username}`).then((response) => {
