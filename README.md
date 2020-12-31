@@ -1,6 +1,11 @@
 <h1 align="center">
 	Advanced react-hooks
+	
+	<h2 align="center">
+		DoWhile Event, by: "Vitor Alencar"
+	
 </h1>
+</h2>
 <br>
 <br>
 
