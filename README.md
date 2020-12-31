@@ -14,13 +14,13 @@
 Clone the repository.
 
 ```sh
-git clone https://github.com/vitormalencar/
+git clone https://github.com/guilhermeabel99/
 ```
 
 `cd` into the directory.
 
 ```sh
-cd hooks
+cd react-hooks
 ```
 
 Install the project dependencies:
