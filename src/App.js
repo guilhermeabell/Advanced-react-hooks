@@ -7,34 +7,50 @@ import { UserErrorBoundary, UserForm } from "./components/UserForm";
 const UserInfo = ({ userName }) => {
   const [user, setUser] = React.useState(null);
   const [error, setError] = React.useState(null);
+  const [status, setStatus] = React.useState("idle")
 
   React.useEffect(() => {
     if(!userName) return;
+    setUser("null");
+    setError("null");
+    setStatus("pendding")
     fetchGithubUser().then(
       (userData) => {  
-        setUser(userData)
+        setUser(userData);
+        setStatus("resolved")
     },
     (error) => { 
         setError(error);
+        setStatus("rejected");
     }
     );
-  }, [userName])  
+  }, [userName]);
 
-  if(error) {
-    return (
-    <div>
-       There was an error 
-      <pre style={{ whiteSpace: "normal" }}>{error}</pre>
-    </div>
-    );
-  
- } else if (!userName) {
+switch (status) {
+
+  case "idle":
     return "Submit user";
-  } else if(!user) {
-  return <UserFalback userName={userName} />
-  } else{
-    return <UserView user={user} />
-  }
+
+  case "pendding":
+    return <UserFalback userName={userName} />;
+    
+    case "resolved":
+    return <UserView user={user} />;
+
+    case "rejected":
+      return (
+        <div>
+           There was an error 
+          <pre style={{ whiteSpace: "normal" }}>{error}</pre>
+        </div>
+        );
+
+  default:
+    throw Error('Unhandled status: ${status}');
+}
+
+
+  
 };
 
 const UserSection = ({ onSelect, userName }) => (
