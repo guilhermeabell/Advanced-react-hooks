@@ -5,9 +5,14 @@
 </h1>
 
 <h2 align="center">
-		DoWhile Event, by: "Vitor Alencar"
+		DoWhile('Rocketseat Event')
 	
-</h2>	
+</h2>
+
+<h3 align="center">
+	
+Speaker of the react hooks event Vitor alencar
+</h3>
 
 
 <br>
@@ -70,3 +75,8 @@ Under the src folder, we have two main directories:
 - `App.js`: the place where the main logic for this workshop
 - `components/`: Components reused across pages
 - `utils.js`: Which contains, as the name suggests, utility shared funcitons,
+- `Index.js`
+- `setupTests.js`
+- `userServices`
+- `reportWebVitals.js`
+- ``;
